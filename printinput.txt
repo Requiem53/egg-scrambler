@@ -1,0 +1,350 @@
+section .text
+global _start
+
+ 
+_start:
+    ;print school name
+    mov eax, 4
+    mov ebx, 1
+    mov ecx, m1
+    mov edx, l1
+	int	0x80
+
+	;print college
+	mov eax, 4
+    mov ebx, 1
+    mov ecx, m2
+    mov edx, l2
+	int	0x80
+
+	;print course
+	mov eax, 4
+    mov ebx, 1
+    mov ecx, m3
+    mov edx, l3
+	int	0x80
+
+	;print AY
+	mov eax, 4
+    mov ebx, 1
+    mov ecx, m4
+    mov edx, l4
+	int	0x80
+
+	;print classlist
+	mov eax, 4
+    mov ebx, 1
+    mov ecx, m5
+    mov edx, l5
+	int	0x80
+
+
+
+	;Product 1
+
+	;prod 1
+	mov eax, 4
+	mov ebx, 1
+	mov ecx, prodT1
+	mov edx, prodT1Len
+	int 80h
+
+	;print prod 1 id
+	mov eax, 4
+	mov ebx, 1
+	mov ecx, prodID
+	mov edx, prodIDLen
+	int 80h
+
+	;get prod 1 id
+	mov eax, 3
+	mov ebx, 2
+	mov ecx, p1Id
+	mov edx, 16
+	int 80h
+
+	;print prod 1 name
+	mov eax, 4
+	mov ebx, 1
+	mov ecx, prodN
+	mov edx, prodNLen
+	int 80h
+
+	;get prod 1 name
+	mov eax, 3
+	mov ebx, 2
+	mov ecx, p1Name
+	mov edx, 16
+	int 80h
+
+	;print prod 1 Manufacturer
+	mov eax, 4
+	mov ebx, 1
+	mov ecx, prodM
+	mov edx, prodMLen
+	int 80h
+
+	;get prod 1 Manufacturer
+	mov eax, 3
+	mov ebx, 2
+	mov ecx, p1Manuf
+	mov edx, 16
+	int 80h
+
+	;print prod 1 Description
+	mov eax, 4
+	mov ebx, 1
+	mov ecx, prodD
+	mov edx, prodDLen
+	int 80h
+
+	;get prod 1 Description
+	mov eax, 3
+	mov ebx, 2
+	mov ecx, p1Desc
+	mov edx, 16
+	int 80h
+
+	;print prod 1 Unit Price
+	mov eax, 4
+	mov ebx, 1
+	mov ecx, prodP
+	mov edx, prodPLen
+	int 80h
+
+	;get prod 1 Unit Price
+	mov eax, 3
+	mov ebx, 2
+	mov ecx, p1Price
+	mov edx, 16
+	int 80h
+
+	;print prod 1 Expiry
+	mov eax, 4
+	mov ebx, 1
+	mov ecx, prodExp
+	mov edx, prodExpLen
+	int 80h
+
+	;get prod 1 Expiry
+	mov eax, 3
+	mov ebx, 2
+	mov ecx, p1Exp
+	mov edx, 16
+	int 80h
+
+	;output
+	mov eax, 4
+	mov ebx, 1
+	mov ecx, space
+	mov edx, spaceLen
+	int 80h
+	
+	;prod 1
+	mov eax, 4
+	mov ebx, 1
+	mov ecx, prodT1
+	mov edx, prodT1Len
+	int 80h
+	
+	;print prod 1 id
+	mov eax, 4
+	mov ebx, 1
+	mov ecx, prodID
+	mov edx, prodIDLen
+	int 80h
+	
+	mov eax, 4
+	mov ebx, 1
+	mov ecx, p1Id
+	mov edx, 16
+	int 80h
+	
+	;print prod 1 name
+	mov eax, 4
+	mov ebx, 1
+	mov ecx, prodN
+	mov edx, prodNLen
+	int 80h
+
+	mov eax, 4
+	mov ebx, 1
+	mov ecx, p1Name
+	mov edx, 16
+	int 80h
+	
+	;print prod 1 Manufacturer
+	mov eax, 4
+	mov ebx, 1
+	mov ecx, prodM
+	mov edx, prodMLen
+	int 80h
+
+	mov eax, 4
+	mov ebx, 1
+	mov ecx, p1Manuf
+	mov edx, 16
+	int 80h
+	
+	;print prod 1 Description
+	mov eax, 4
+	mov ebx, 1
+	mov ecx, prodD
+	mov edx, prodDLen
+	int 80h
+
+	mov eax, 4
+	mov ebx, 1
+	mov ecx, p1Desc
+	mov edx, 16
+	int 80h
+	
+	;print prod 1 Unit Price
+	mov eax, 4
+	mov ebx, 1
+	mov ecx, prodP
+	mov edx, prodPLen
+	int 80h
+	
+	mov eax, 4
+	mov ebx, 1
+	mov ecx, p1Price
+	mov edx, 16
+	int 80h
+	
+	;print prod 1 Expiry
+	mov eax, 4
+	mov ebx, 1
+	mov ecx, prodExp
+	mov edx, prodExpLen
+	int 80h
+
+	mov eax, 4
+	mov ebx, 1
+	mov ecx, p1Exp
+	mov edx, 16
+	int 80h
+
+
+	mov eax, 1
+	mov ebx, 0
+	int 80h
+
+section .data                 
+
+m1 db 'Cebu Institute of Technology - University', 10
+l1 equ $-m1
+m2 db 'College of Computer Studies', 10
+l2 equ $-m2
+m3 db 'CS243 Computer Organization and Architecture', 10
+l3 equ $-m3
+m4 db 'First Semester Academic Year 2023-24', 10, 10
+l4 equ $-m4
+m5 db 'ENTER DATA'
+l5 equ $-m5
+
+ 
+space db 10,10
+spaceLen equ $-space
+
+prodT1 db 10,10,10,'Product No. 1', 10
+prodT1Len equ $-prodT1
+
+ 
+
+prodT2 db 10,10,10,'Product No. 2', 10
+prodT2Len equ $-prodT2
+
+ 
+
+prodT3 db 10,10,10,'Product No. 3', 10
+prodT3Len equ $-prodT3
+
+ 
+
+prodT4 db 10,10,10,'Product No. 4', 10
+prodT4Len equ $-prodT4
+
+ 
+
+prodT5 db 10,10,10,'Product No. 5', 10
+prodT5Len equ $-prodT5
+
+ 
+
+prodID db 'Product ID No: '
+prodIDLen equ $-prodID
+
+ 
+
+prodN db 'Product Name: '
+prodNLen equ $-prodN
+
+ 
+
+prodM db 'Manufacturer: '
+prodMLen equ $-prodM
+
+ 
+
+prodD db 'Description: '
+prodDLen equ $-prodD
+
+ 
+
+prodP db 'Unit Price: '
+prodPLen equ $-prodP
+
+ 
+
+prodExp db 'Expiry Date: '
+prodExpLen equ $-prodExp
+
+
+section .bss         
+num resw 16
+
+ 
+
+p1Id resw 16
+p1Name resw 16
+p1Manuf resw 16
+p1Desc resw 16
+p1Price resw 16
+p1Exp resw 16
+
+ 
+
+p2Id resw 16
+p2Name resw 16
+p2Manuf resw 16
+p2Desc resw 16
+p2Price resw 16
+p2Exp resw 16
+
+ 
+
+p3Id resw 16
+p3Name resw 16
+p3Manuf resw 16
+p3Desc resw 16
+p3Price resw 16
+p3Exp resw 16
+
+ 
+
+p4Id resw 16
+p4Name resw 16
+p4Manuf resw 16
+p4Desc resw 16
+p4Price resw 16
+p4Exp resw 16
+
+ 
+
+p5Id resw 16
+p5Name resw 16
+p5Manuf resw 16
+p5Desc resw 16
+p5Price resw 16
+p5Exp resw 16
